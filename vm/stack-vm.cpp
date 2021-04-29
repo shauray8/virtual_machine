@@ -54,12 +54,31 @@ void StackVm::doPrimitive(){
       break;
 
     case 1: // --> add
-      cout << "add" << memory[sp-1] << " " << memory[sp]
+      cout << "add" << memory[sp-1] << " " << memory[sp];
       memory[sp - 1] = memory[sp-1] + momory[sp];
-      break
+      break;
     
   }
 }
+
+void StackVM::run(){
+  pc -= 1;
+  while (running == 1){
+    fetch();
+    decode();
+    execute();
+    cout << "top: " << memory[ap];
+  }
+}
+
+void StackVM::loadProgram(vector<i32> prog){
+  for (i32 i = 0; i < prog.size(); i++){
+    memory[pc + 1] = prog[i];
+  }
+}
+
+
+
 
 
 
