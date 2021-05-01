@@ -66,6 +66,7 @@ vector<i32> compileToInstructions(strings s) {
 			}
 		}
 	}
+  instructions.push_back(0x40000000);
 	return instructions;
 }
 bool isInteger(string s) {
