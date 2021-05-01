@@ -15,7 +15,7 @@ enum State : byte {
 	DUMP,
 	COMMENT,
 	END
-}
+};
 
 class Lexer {
 	bool my_isspace(char c);

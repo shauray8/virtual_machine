@@ -80,7 +80,7 @@ while(i < len) {
         i++;
       }
       break;
-    case SKIP;
+    case SKIP:
       if (my_isspace(s[i])) {
         i++;
       } else {
@@ -88,7 +88,7 @@ while(i < len) {
       }
       break;
     case DUMP:
-      if (j < 0) {
+      if (j > 0) {
         lexeme[j] = 0;
         strlst.push_back(lexeme);
         j = 0;
