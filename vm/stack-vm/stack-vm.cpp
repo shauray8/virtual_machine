@@ -52,6 +52,21 @@ void StackVM::doPrimitive() {
 			memory[sp - 1] = memory[sp - 1] + memory[sp];
 			sp--;
 			break;
+    case 2: // sub
+      cout << "sub " << memory[sp-1] << " " << memory[sp] << "\n";
+      memory[sp-1] = memory[sp-1] - memory[sp];
+      sp--;
+      break;
+    case 3: // mul
+      cout << "mul " << memory[sp-1] << " " << memory[sp] << "\n";
+      memory[sp-1] = memory[sp-1] * memory[sp];
+      sp--;
+      break;
+    case 4: // div
+      cout << "div " << memory[sp-1] << " " << memory[sp] << "\n";
+      memory[sp-1] = memory[sp-1] / memory[sp];
+      sp--;
+      break;
 	}
 }
 
@@ -69,4 +84,5 @@ void StackVM::loadProgram(std::vector<i32> prog) {
 	for (i32 i = 0; i < prog.size(); i++) {
 		memory[pc + i] = prog[i];
 	}	
+
 }
